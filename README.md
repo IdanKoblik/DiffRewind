@@ -12,7 +12,7 @@ DiffRewind is a Python tool that restores stacked diffs in a GitLab project, all
 
 2. **Install dependencies:**
    ```python
-   python3 setup.py
+   pip3 install -r requirements.txt
    ```
 ## Usage
 
