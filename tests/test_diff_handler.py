@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import MagicMock, patch
-from src.diff_handler import DiffHandler
+from diff_handler import DiffHandler
 
 class TestDiffHandler(unittest.TestCase):
     def setUp(self):

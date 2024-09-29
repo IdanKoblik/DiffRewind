@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch, MagicMock
 from pathlib import Path
-from src.git_handler import GitHandler
+from git_handler import GitHandler
 
 class TestGitHandler(unittest.TestCase):
     def setUp(self):

@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from src.gitlab_handler import GitLabHandler
+from gitlab_handler import GitLabHandler
 
 class TestGitLabHandler(unittest.TestCase):
     def setUp(self):

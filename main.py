@@ -2,7 +2,7 @@ import logging
 import sys
 from pathlib import Path
 from typing import Dict
-from src.git_handler import GitHandler
+from git_handler import GitHandler
 from gitlab_handler import GitLabHandler
 from config_handler import ConfigHandler
 from diff_handler import DiffHandler

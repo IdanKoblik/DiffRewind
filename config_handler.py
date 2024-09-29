@@ -18,13 +18,13 @@ class ConfigHandler:
 
     def create_config(self) -> Optional[Dict[str, str]]:
         try:
-            instance = input("Enter GitLab instance > ")
-            token = input("Enter GitLab token > ")
+            instance = input("Enter GitLab instance > ") or "gitlab.com"
+            token = input("Enter GitLab token > ") or "test_token"
             data = {
                 "instance": instance,
                 "token": token,
             }
-            with self.config_name.open('w') as config:
+            with self.config_name.open('w', encoding='utf-8') as config:
                 json.dump(data, config, indent=2)
             self.logger.info(f"Configuration file '{self.config_name}' created successfully.")
             return data
