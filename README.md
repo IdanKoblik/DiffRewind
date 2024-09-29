@@ -11,14 +11,14 @@ DiffRewind is a Python tool that restores stacked diffs in a GitLab project, all
    ```
 
 2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
+   ```python
+   python3 setup.py
    ```
 ## Usage
 
 To restore a stacked diff, use the following command:
 ```bash
-python3 main.py <path_to_repo>
+python3 src/main.py <path_to_repo>
 ```
 Replace `<path_to_repo>` with the path to your GitLab project.
 
