@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v2
@@ -44,16 +44,13 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Log in to GitHub Container Registry
-        env: ${{ secrets.GITHUB_TOKEN }}
-        run: docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Build package
+        run: python -m build
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
 
-      - name: Build Docker image
-        run: |
-          docker build . -t ghcr.io/${{ github.repository_owner }}/your-image-name:latest
-
-      - name: Push Docker image
-        run: |
-          docker push ghcr.io/${{ github.repository_owner }}/your-image-name:latest
