@@ -17,7 +17,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "diffdewind=src.main:main",
+            "diffdewind=main:main",
         ],
     },
     long_description=long_description,
