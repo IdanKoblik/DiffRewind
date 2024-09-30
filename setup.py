@@ -4,8 +4,8 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name="diffdewind",
-    version="0.2.0",
+    name="diffrewind",
+    version="0.3.0",
     packages=find_packages(),
     install_requires=[
         "requests>=2.26.0",
@@ -17,7 +17,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "diffdewind=main:main",
+            "diffrewind=main:main",
         ],
     },
     long_description=long_description,
