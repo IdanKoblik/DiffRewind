@@ -22,6 +22,16 @@ python3 main.py <path_to_repo>
 ```
 Replace `<path_to_repo>` with the path to your GitLab project.
 
+## Star History
+
+<a href="https://star-history.com/#IdanKoblik/DiffRewind&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=IdanKoblik/DiffRewind&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=IdanKoblik/DiffRewind&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=IdanKoblik/DiffRewind&type=Date" />
+ </picture>
+</a>
+
 ## Contributing
 
 Feel free to submit issues or pull requests for enhancements!
