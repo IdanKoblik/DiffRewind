@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="diffrewind",
-    version="0.3.0",
+    version="0.3.1",
     packages=find_packages(),
     install_requires=[
         "requests>=2.26.0",
