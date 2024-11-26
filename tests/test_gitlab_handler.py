@@ -23,6 +23,7 @@ class TestGitLabHandler(unittest.TestCase):
     def test_get_mr_info(self, mock_get):
         mock_response = MagicMock()
         mock_response.json.return_value = [{
+            'state': 'open',
             'author': {'name': 'Test User'},
             'iid': 1,
             'created_at': '2023-01-01T00:00:00Z'
@@ -30,6 +31,7 @@ class TestGitLabHandler(unittest.TestCase):
         mock_get.return_value = mock_response
         mr_info = self.gitlab_handler.get_mr_info(1, 'feature-branch')
         self.assertEqual(mr_info, {
+            'state': 'open',
             'author': 'Test User',
             'iid': 1,
             'created_at': '2023-01-01T00:00:00Z'
