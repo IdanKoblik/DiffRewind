@@ -24,6 +24,9 @@ class DiffHandler:
         for branch in branches:
             if self.is_stacked(branch):
                 mr_info = self.gitlab_handler.get_mr_info(self.gitlab_handler.project_id, branch.replace("origin/", ""))
+                if mr_info["state"] == "closed":
+                    continue
+
                 if mr_info:
                     base_name = f"{branch.split('-')[0]}-{branch.split('-')[1]} ({mr_info['author']})"
                     stacked_diffs[base_name].append((branch, mr_info['iid'], mr_info['created_at']))

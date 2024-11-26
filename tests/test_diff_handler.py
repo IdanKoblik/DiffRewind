@@ -14,6 +14,7 @@ class TestDiffHandler(unittest.TestCase):
 
     def test_group_stacked_diffs(self):
         self.gitlab_handler.get_mr_info.return_value = {
+            'state': 'open',
             'author': 'Test User',
             'iid': 1,
             'created_at': '2023-01-01T00:00:00Z'
@@ -21,6 +22,17 @@ class TestDiffHandler(unittest.TestCase):
         branches = ['origin/feature-123-abc123', 'origin/feature-123-def456']
         result = self.diff_handler.group_stacked_diffs(branches)
         self.assertEqual(len(result), 1)
+
+    def test_closed_group_stacked_diffs(self):
+        self.gitlab_handler.get_mr_info.return_value = {
+            'state': 'closed',
+            'author': 'Test User',
+            'iid': 1,
+            'created_at': '2023-01-01T00:00:00Z'
+        }
+        branches = ['origin/feature-123-abc123', 'origin/feature-123-def456']
+        result = self.diff_handler.group_stacked_diffs(branches)
+        self.assertEqual(len(result), 0)
 
     @patch('subprocess.run')
     @patch('json.dump')

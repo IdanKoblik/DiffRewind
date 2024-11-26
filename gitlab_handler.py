@@ -28,6 +28,7 @@ class GitLabHandler:
         mrs = response.json()
         if mrs:
             return {
+                "state": mrs[0]["state"],
                 "author": mrs[0]["author"]["name"],
                 "iid": mrs[0]["iid"],
                 "created_at": mrs[0]["created_at"]
